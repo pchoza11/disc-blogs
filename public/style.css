@@ -1,11 +1,12 @@
 body {
-    background-color: #F2F6D0;
+    background-color: black;
     background-image: url("./assets/dolla-bin-background.jpg");
     background-size: cover;
 }
 
 #heading {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5)), url("./assets/records-header-image.jpg");
+    /* background-image: linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5)), url("./assets/records-header-image.jpg"); */
+    background-color: rgba(255, 255, 255, 0.85);
     background-size: cover;
     padding: 10px;
     margin-bottom: 1%;
@@ -24,10 +25,10 @@ body {
 #articles {
     display: inline-block;
     overflow: auto;
-    font-size: 24px;
+    font-size: 20px;
     width: 55%;
     height: 700px;
-
+    margin-top: 4%;
 }
 .article-box {
     padding: 10px;
@@ -35,9 +36,18 @@ body {
     margin-bottom: 3%;
 }
 
-#comments {
+#comments-wrap {
     float: right;
     width: 40%;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    margin-top: 8%;
+}
+#comments{
+    width: 90%;
+    margin-left: auto;
+    margin-right: 7%;
+
 }
 
 textarea,
@@ -45,6 +55,7 @@ input {
     display: block;
     width: 100%;
     background-color: white;
+    padding: 5px;
 }
 
 input {
@@ -55,4 +66,7 @@ input {
 textarea {
     height: 200px;
     font-size: 18px;
+}
+#savecomment{
+    margin-bottom: 20px;
 }
