@@ -22,9 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Use express.static to serve the public folder as a static directory
 app.use(express.static("public"));
 
-var PORT = process.env.PORT;
-
-mongoose.Promise = Promise;
+var PORT = process.env.PORT || 3001;
 
 if (process.env.MONGOD_URI){
     mongoose.connect(process.env.MONGOD_URI);
