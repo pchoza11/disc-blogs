@@ -17,23 +17,16 @@ var app = express();
 
 var PORT = process.env.PORT || 3001;
 
-var databaseUri = 'mongodb://localhost/discog-blog-hw';
+const MONGOD_URI = PORT || process.env.MONGOD_URI || "mongodb://localhost/recipe";
 
-if (process.env.MONGODB_URI) {
-    mongoose.connect(process.env.MONGODB_URI);
-} else {
-    mongoose.connect(databaseUri);
+mongoose.Promise = Promise;
+
+if (process.env.MONGOD_URI){
+    mongoose.connect(MONGOD_URI);
 }
-
-var db = mongoose.connection;
-
-db.on('error', function(err){
-    console.log('Mongoose Error: ', err);
-});
-
-db.once('open', function() {
-    console.log('Mongoose Connection Successful.')
-})
+else{
+    mongoose.connect("mongodb://localhost/recipe");
+}
 
 // Use morgan logger for logging requests
 app.use(logger("dev"));
