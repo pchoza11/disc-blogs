@@ -24,8 +24,8 @@ app.use(express.static("public"));
 
 var PORT = process.env.PORT || 3001;
 
-if (process.env.MONGOD_URI){
-    mongoose.connect(process.env.MONGOD_URI);
+if (process.env.MONGODB_URI){
+    mongoose.connect(process.env.MONGODB_URI);
 }
 else{
     mongoose.connect("mongodb://localhost/recipe");
