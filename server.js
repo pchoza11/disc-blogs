@@ -27,7 +27,7 @@ var PORT = process.env.PORT;
 mongoose.Promise = Promise;
 
 if (process.env.MONGOD_URI){
-    mongoose.connect(MONGOD_URI);
+    mongoose.connect(process.env.MONGOD_URI);
 }
 else{
     mongoose.connect("mongodb://localhost/recipe");
