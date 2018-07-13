@@ -15,6 +15,13 @@ var db = require("./models");
 // Initialize Express
 var app = express();
 
+// Use morgan logger for logging requests
+app.use(logger("dev"));
+// Use body-parser for handling form submissions
+app.use(bodyParser.urlencoded({ extended: true }));
+// Use express.static to serve the public folder as a static directory
+app.use(express.static("public"));
+
 var PORT = process.env.PORT || 3001;
 
 const MONGOD_URI = PORT || process.env.MONGOD_URI || "mongodb://localhost/recipe";
@@ -27,13 +34,6 @@ if (process.env.MONGOD_URI){
 else{
     mongoose.connect("mongodb://localhost/recipe");
 }
-
-// Use morgan logger for logging requests
-app.use(logger("dev"));
-// Use body-parser for handling form submissions
-app.use(bodyParser.urlencoded({ extended: true }));
-// Use express.static to serve the public folder as a static directory
-app.use(express.static("public"));
 
 // Connect to the Mongo DB
 // mongoose.connect("mongodb://localhost/discog-blog-hw");
