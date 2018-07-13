@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Use express.static to serve the public folder as a static directory
 app.use(express.static("public"));
 
-var PORT = process.env.PORT || 3001;
+var PORT = process.env.PORT;
 
 const MONGOD_URI = PORT || process.env.MONGOD_URI || "mongodb://localhost/recipe";
 
