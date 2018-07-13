@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/discog-blog-hw");
+// mongoose.connect("mongodb://localhost/discog-blog-hw");
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function (req, res) {
