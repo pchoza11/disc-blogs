@@ -1,6 +1,11 @@
 body {
     background-color: black;
     background-image: url("./assets/dolla-bin-background.jpg");
+    background-image: center;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     background-size: cover;
 }
 
