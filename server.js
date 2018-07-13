@@ -24,8 +24,6 @@ app.use(express.static("public"));
 
 var PORT = process.env.PORT;
 
-const MONGOD_URI = PORT || process.env.MONGOD_URI || "mongodb://localhost/recipe";
-
 mongoose.Promise = Promise;
 
 if (process.env.MONGOD_URI){
